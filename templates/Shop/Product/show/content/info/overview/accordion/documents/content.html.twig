@@ -1,0 +1,17 @@
+{% set product = hookable_metadata.context.product %}
+
+{% embed '@SyliusShop/shared/accordion/accordion_item_content.html.twig' with { accordion_item_id: 'documents' } %}
+    {% block accordion_item_content %}
+        <div class="list-group list-group-flush">
+            {% for document in product.productDocuments %}
+                <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                   href="{{ path('bitexpert_product_document_shop_product_document_download', {id: document.id}) }}"
+                   target="_blank"
+                >
+                    <span>{{ document.documentType.name }}</span>
+                    {{ ux_icon('tabler:download', {width: '18', height: '18', class: 'text-muted flex-shrink-0'}) }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endblock %}
+{% endembed %}

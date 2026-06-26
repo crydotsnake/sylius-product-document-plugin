@@ -6,7 +6,16 @@ twig:
     paths:
         '%kernel.project_dir%/../../../tests/TestApplication/templates': ~
 
-# Remove if you do not need to extend entities
+sylius_product:
+    resources:
+        product:
+            classes:
+                model: Tests\BitExpert\SyliusProductDocumentPlugin\Entity\Product
+
+doctrine_migrations:
+    migrations_paths:
+        'BitExpertSyliusProductDocumentPlugin': '%kernel.project_dir%/../../../src/Migrations'
+
 doctrine:
     orm:
         entity_managers:

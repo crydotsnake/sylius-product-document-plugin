@@ -1,0 +1,14 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_shop.product.show.content.info.overview.accordion':
+            documents:
+                template: '@BitExpertSyliusProductDocumentPlugin/Shop/Product/show/content/info/overview/accordion/documents.html.twig'
+                priority: -100
+
+        'sylius_shop.product.show.content.info.overview.accordion.documents':
+            title:
+                template: '@BitExpertSyliusProductDocumentPlugin/Shop/Product/show/content/info/overview/accordion/documents/title.html.twig'
+                priority: 100
+            content:
+                template: '@BitExpertSyliusProductDocumentPlugin/Shop/Product/show/content/info/overview/accordion/documents/content.html.twig'
+                priority: 0

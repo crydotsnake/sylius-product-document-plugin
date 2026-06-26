@@ -1,4 +1,14 @@
-# Put your plugin configuration here
-
 imports:
     - { resource: "twig_hooks/**/*.yaml" }
+
+sylius_grid:
+    templates:
+        action:
+            update_document_type_positions: '@BitExpertSyliusProductDocumentPlugin/Admin/Grid/Action/DocumentType/updatePositions.html.twig'
+
+flysystem:
+    storages:
+        bitexpert_product_document.storage:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/public/media/documents'

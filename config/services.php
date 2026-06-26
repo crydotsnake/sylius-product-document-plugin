@@ -1,9 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-return static function (ContainerConfigurator $container) {
-    $services = $container->services();
-    $container->import('services/**');
+return static function (ContainerConfigurator $container): void {
+    $container->import('services/*.php');
 };

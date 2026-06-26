@@ -1,1 +1,20 @@
-# Define your own admin routes here
+bitexpert_product_document_admin_document_type:
+    resource: |
+        alias: bitexpert_product_document.document_type
+        section: admin
+        templates: "@SyliusAdmin/shared/crud"
+        grid: bitexpert_product_document_document_type
+        redirect: index
+        vars:
+            all:
+                subheader: bitexpert_product_document.ui.document_types
+            index:
+                icon: tabler:file-description
+    type: sylius.resource
+    prefix: /admin
+
+bitexpert_product_document_admin_document_type_update_positions:
+    path: /admin/document-types/update-positions
+    methods: [PUT]
+    defaults:
+        _controller: bitexpert_product_document.controller.document_type::updatePositionsAction

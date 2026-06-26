@@ -1,0 +1,14 @@
+{% block bitexpert_product_document_widget %}
+    {{ form_row(form.documentType) }}
+
+    {% if form.vars.value and form.vars.value.path is not null %}
+        <a href="{{ path('bitexpert_product_document_shop_product_document_download', {id: form.vars.value.id}) }}"
+           target="_blank"
+           class="btn btn-outline-secondary btn-sm mb-3"
+        >
+            {{ 'bitexpert.ui.download_file'|trans }}
+        </a>
+    {% endif %}
+
+    {{ form_row(form.file) }}
+{% endblock %}

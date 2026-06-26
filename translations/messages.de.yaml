@@ -1,0 +1,20 @@
+bitexpert_product_document:
+    ui:
+        document_type: Dokumenttyp
+        document_types: Dokumenttypen
+
+bitexpert:
+    ui:
+        documents: Dokumente
+        add_document: Dokument hinzufügen
+        no_documents: Noch keine Dokumente zugewiesen.
+        download_documents: Dokumente herunterladen
+        download_file: Datei herunterladen
+    form:
+        product_document:
+            document_type: Dokumenttyp
+            file: Datei
+    menu:
+        admin:
+            catalog:
+                document_types: Dokumenttypen

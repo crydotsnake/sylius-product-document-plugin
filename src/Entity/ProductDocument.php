@@ -1,0 +1,120 @@
+<?php
+
+/*
+ * This file is part of the Sylius Product Document package.
+ *
+ * (c) bitExpert AG
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+declare(strict_types=1);
+
+namespace BitExpert\SyliusProductDocumentPlugin\Entity;
+
+use BitExpert\SyliusProductDocumentPlugin\Model\DocumentTypeInterface;
+use BitExpert\SyliusProductDocumentPlugin\Model\ProductDocumentInterface;
+use Doctrine\ORM\Mapping as ORM;
+use SplFileInfo;
+use Sylius\Component\Core\Model\ProductInterface;
+
+#[ORM\Entity]
+#[ORM\Table(name: 'bitexpert_sylius_product_document')]
+#[ORM\HasLifecycleCallbacks]
+class ProductDocument implements ProductDocumentInterface
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
+
+    private ?SplFileInfo $file = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $path = null;
+
+    #[ORM\ManyToOne(targetEntity: DocumentType::class, inversedBy: 'productDocuments')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?DocumentType $documentType = null;
+
+    #[ORM\ManyToOne(targetEntity: 'Sylius\Component\Core\Model\ProductInterface')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
+    private ?ProductInterface $product = null;
+
+    #[ORM\Column]
+    private \DateTimeImmutable $createdAt;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getFile(): ?SplFileInfo
+    {
+        return $this->file;
+    }
+
+    public function setFile(?SplFileInfo $file): void
+    {
+        $this->file = $file;
+    }
+
+    public function hasFile(): bool
+    {
+        return $this->file !== null;
+    }
+
+    public function getPath(): ?string
+    {
+        return $this->path;
+    }
+
+    public function setPath(?string $path): void
+    {
+        $this->path = $path;
+    }
+
+    public function getDocumentType(): ?DocumentTypeInterface
+    {
+        return $this->documentType;
+    }
+
+    public function setDocumentType(?DocumentTypeInterface $documentType): void
+    {
+        $this->documentType = $documentType instanceof DocumentType ? $documentType : null;
+    }
+
+    public function getProduct(): ?ProductInterface
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?ProductInterface $product): void
+    {
+        $this->product = $product;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+}

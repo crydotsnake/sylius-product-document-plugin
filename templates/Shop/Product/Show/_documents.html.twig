@@ -1,0 +1,17 @@
+{% if product.productDocuments is not empty %}
+    <div class="ui segment">
+        <h3 class="ui dividing header">{{ 'bitexpert.ui.download_documents'|trans }}</h3>
+        <div class="ui very relaxed horizontal list centered">
+            {% for document in product.productDocuments %}
+                <div class="item">
+                    <a class="ui labeled icon button"
+                       href="{{ path('bitexpert_product_document_shop_product_document_download', {id: document.id}) }}"
+                    >
+                        <i class="download icon"></i>
+                        {{ document.documentType.name }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

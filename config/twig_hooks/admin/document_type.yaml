@@ -1,0 +1,21 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.document_type.create.content.form':
+            sections:
+                enabled: false
+            general:
+                template: '@BitExpertSyliusProductDocumentPlugin/Admin/DocumentType/form/general.html.twig'
+                priority: 100
+            translations:
+                template: '@BitExpertSyliusProductDocumentPlugin/Admin/DocumentType/form/translations.html.twig'
+                priority: 0
+
+        'sylius_admin.document_type.update.content.form':
+            sections:
+                enabled: false
+            general:
+                template: '@BitExpertSyliusProductDocumentPlugin/Admin/DocumentType/form/general.html.twig'
+                priority: 100
+            translations:
+                template: '@BitExpertSyliusProductDocumentPlugin/Admin/DocumentType/form/translations.html.twig'
+                priority: 0

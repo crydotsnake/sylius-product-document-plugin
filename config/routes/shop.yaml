@@ -1,1 +1,5 @@
-# Delete these routes and define your own shop routes here
+bitexpert_product_document_shop_product_document_download:
+    path: /product-documents/{id}/download
+    methods: [GET]
+    defaults:
+        _controller: bitexpert_product_document.controller.product_document::downloadAction
