@@ -24,12 +24,12 @@ final class ProductDocumentType extends AbstractResourceType
     {
         $builder
             ->add('documentType', EntityType::class, [
-                'label' => 'bitexpert.form.product_document.document_type',
+                'label' => false,
                 'class' => DocumentType::class,
                 'choice_label' => 'name',
             ])
             ->add('file', FileType::class, [
-                'label' => 'bitexpert.form.product_document.file',
+                'label' => false,
                 'required' => false,
             ]);
     }
