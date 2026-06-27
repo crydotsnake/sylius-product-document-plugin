@@ -5,8 +5,8 @@
 composer install
 # Run default Sylius migrations
 vendor/bin/console doctrine:migration:migrate -n
-# Run the migrations for the Force Login module
-vendor/bin/console doctrine:migration:diff --namespace=App\\Migrations
+# Run the migrations for the Sylius Product Document plugin
+vendor/bin/console doctrine:migration:diff --namespace=BitExpertSyliusProductDocumentPlugin
 vendor/bin/console doctrine:migration:migrate -n
 # Install default fixtures
 vendor/bin/console sylius:fixtures:load -n
