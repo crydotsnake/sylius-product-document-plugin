@@ -52,7 +52,8 @@
         "symfony/maker-bundle": "^1.67",
         "symfony/runtime": "^6.4 || ^7.4",
         "symfony/web-profiler-bundle": "^6.4 || ^7.4",
-        "symfony/webpack-encore-bundle": "^2.2"
+        "symfony/webpack-encore-bundle": "^2.2",
+        "vincentlanglet/twig-cs-fixer": "^4.0"
     },
     "config": {
         "sort-packages": true,
@@ -92,6 +93,7 @@
         "cs-check": "vendor/bin/ecs check",
         "cs-fix": "vendor/bin/ecs check --fix",
         "cs-twig": "vendor/bin/twig-cs-fixer lint templates",
+        "cs-twig-fix": "vendor/bin/twig-cs-fixer fix templates",
         "database-reset": [
             "vendor/bin/console doctrine:database:drop --force --if-exists",
             "vendor/bin/console doctrine:database:create",
