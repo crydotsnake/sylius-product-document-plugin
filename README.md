@@ -117,6 +117,15 @@ You can run the unit tests with the following command (requires dependency insta
 Feel free to contribute to this module by reporting issues or creating pull requests for improvements.
 
 To run the Test Application included in the repo, refer to the [Sylius Test Application](https://docs.sylius.com/plugins-development-guide/test-application) docs.
+If you are using [DDEV](https://www.ddev.com) you can run the following commands to bootstrap the Test Application in Docker:
+
+```bash
+ddev start
+```
+
+```bash
+ddev bootstrap
+```
 
 ## Credits
 
