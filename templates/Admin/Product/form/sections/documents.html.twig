@@ -16,6 +16,7 @@
                     <thead>
                         <tr>
                             <th>{{ 'bitexpert_product_document.form.product_document.document_type'|trans }}</th>
+                            <th>{{ 'bitexpert_product_document.form.product_document.document_visibility'|trans }}</th>
                             <th>{{ 'bitexpert_product_document.form.product_document.file'|trans }}</th>
                             <th class="w-1"></th>
                         </tr>
@@ -23,9 +24,13 @@
                     <tbody>
                         {% for document_form in documents %}
                             <tr>
-                                <td class="align-top" style="min-width: 200px;">
+                                <td class="align-top">
                                     {{ form_widget(document_form.documentType) }}
                                     {{ form_errors(document_form.documentType) }}
+                                </td>
+                                <td class="align-top">
+                                    {{ form_widget(document_form.documentVisibility) }}
+                                    {{ form_errors(document_form.documentVisibility) }}
                                 </td>
                                 <td class="align-top">
                                     {{ form_widget(document_form.file) }}

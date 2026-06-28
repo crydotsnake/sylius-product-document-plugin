@@ -5,11 +5,7 @@ bitexpert_product_document_admin_document_type:
         templates: "@SyliusAdmin/shared/crud"
         grid: bitexpert_product_document_document_type
         redirect: index
-        vars:
-            all:
-                subheader: bitexpert_product_document.ui.document_types
-            index:
-                icon: tabler:file-description
+        except: ['show']
     type: sylius.resource
     prefix: /admin
 
