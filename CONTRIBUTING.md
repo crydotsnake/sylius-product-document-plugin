@@ -2,12 +2,12 @@
 
 ## Resources
 
-If you wish to contribute to sylius-force-login, please be sure to
+If you wish to contribute to sylius-product-document, please be sure to
 read/subscribe to the following resources:
 
 -  [The PSR-2 Coding Standard](http://www.php-fig.org/psr/psr-2/)
 
-If you are working on new features or refactoring [create a proposal](https://github.com/bitExpert/sylius-force-login/issues/new).
+If you are working on new features or refactoring [create a proposal](https://github.com/bitExpert/sylius-product-document-plugin/issues/new).
 
 ## Reporting Potential Security Issues
 
