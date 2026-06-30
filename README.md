@@ -1,6 +1,6 @@
 # Sylius Product Document Plugin
 
-[![Build Status](https://github.com/bitExpert/sylius-product-document-plugin/actions/workflows/build.yaml/badge.svg?branch=2.2)](https://github.com/bitExpert/sylius-product-document-plugin/actions)
+[![Build Status](https://github.com/bitExpert/sylius-product-document-plugin/actions/workflows/build.yaml/badge.svg)](https://github.com/bitExpert/sylius-product-document-plugin/actions/workflows/build.yaml)
 [![installs on Packagist](https://img.shields.io/packagist/dt/bitexpert/sylius-product-document-plugin)](https://packagist.org/packages/bitexpert/sylius-product-document-plugin/)
 [![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)](https://rheinneckar.social/@bitexpert)
 
